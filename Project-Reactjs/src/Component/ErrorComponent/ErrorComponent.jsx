@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../HeaderComponent/Header'
 
 function ErrorComponent(props) {
   return (

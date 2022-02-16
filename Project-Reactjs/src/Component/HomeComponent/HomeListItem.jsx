@@ -31,7 +31,7 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
 )
 
 function HomeListItem(props) {
-	const [products, setProducts] = useState([])
+	const [products, ] = useState([])
 
 	const { row, title } = props
 

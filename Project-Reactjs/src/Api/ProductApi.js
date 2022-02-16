@@ -1,4 +1,3 @@
-import axios from "axios"
 import requestClient from "./requestClient"
 
 const ProductApi = {
@@ -12,9 +11,16 @@ const ProductApi = {
 		return requestClient.get(urlParam)
 	},
 
-	deleteProduct(id) {
+	deleteProduct(id, user) {
 		const urlParam = `products/${id}`
-		return requestClient.delete(urlParam)
+        
+        const config = {
+			headers: {
+				Authorization: `Bearer ${user}`,
+			},
+		}
+
+		return requestClient.delete(urlParam,config)
 	},
 
 	update(id, data) {
@@ -22,17 +28,22 @@ const ProductApi = {
 		return requestClient.put(urlParam, data)
 	},
 
-	add(data) {
+	add(data, user) {
 		const urlParam = `products`
-		const user = localStorage.getItem("user")
+		// const user = localStorage.getItem("user")
 
 		const config = {
 			headers: {
-				Authorization: `Bearer ${user[0].token}`,
+				Authorization: `Bearer ${user}`,
 			},
 		}
 
 		return requestClient.post(urlParam, data, config)
+	},
+    upload(data) {
+		const urlParam = `upload`
+
+		return requestClient.post(urlParam, data)
 	},
 }
 

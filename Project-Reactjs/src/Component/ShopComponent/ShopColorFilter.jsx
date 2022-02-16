@@ -1,6 +1,6 @@
-import { React, useState } from 'react'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
+import { React } from 'react'
 import { useDispatch } from 'react-redux'
 import { sortColor } from '../../Slice/ProductSortSlice'
 

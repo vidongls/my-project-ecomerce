@@ -30,7 +30,7 @@ function Details(props) {
     return () => {
       setProducts([])
     }
-  }, [])
+  }, [productID])
 
   return (
     <div className="detail">

@@ -20,6 +20,7 @@ function Header(props) {
 	let user = useSelector((state) => state.login.currentUser[0])
 
 	useEffect(() => {
+        console.log(user);
 		const handleScroll = () => {
 			setScroll(window.scrollY > 300)
 		}
@@ -33,7 +34,7 @@ function Header(props) {
 		checkLogin()
 
 		return () => window.removeEventListener("scroll", handleScroll)
-	}, [])
+	}, [user])
 
 	const handleMenu = () => {
 		setShowMenu(!showMenu)
@@ -122,6 +123,11 @@ function Header(props) {
 					<li>
 						<NavLink to={"/contact"}>Contact</NavLink>
 					</li>
+					{user && user.isAdmin && (
+						<li>
+							<NavLink to={"/admin"}>Dashboard</NavLink>
+						</li>
+					)}
 				</ul>
 				<div className="mobile-wrapbtn">
 					<ul className="header-options">

@@ -18,10 +18,14 @@ import CheckOutLayout from './Layouts/CheckOutLayout'
 import ProfileLayout from './Layouts/ProfileLayout'
 import React, { useState, useEffect } from 'react'
 
-import AdminLayout from './Admin'
-import 'antd/dist/antd.css'; 
+ 
 import './App.css'
 import './media/css/style.css'
+
+import 'antd/dist/antd.css';
+import AdminLayout from './Admin/Layout/Dashboard'
+import Product from './Admin/Layout/Product/Products'
+
 function App() {
   const [show, setShow] = useState(true)
 
@@ -55,6 +59,7 @@ function App() {
           <Route path="/checkout" component={CheckOutLayout} exact></Route>
           <Route path="/profile" component={ProfileLayout} exact></Route>
           <Route path="/admin" component={AdminLayout} exact></Route>
+          <Route path="/admin/products" component={Product} exact></Route>
           <Route
             path="/details/:productID"
             component={DetailLayout}

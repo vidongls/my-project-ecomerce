@@ -38,7 +38,7 @@ function ProductSort(props) {
         '& button': {
           marginLeft: { xs: '0px', sm: '0px', lg: '20px' },
           marginRight: { xs: '10px', sm: '10px', md: '20px', lg: '0px' },
-          fontSize: { xs: '12px', md: '12px', md: '14px' },
+          fontSize: { xs: '12px', md: '12px', lg: '14px' },
           color: '#10111e',
           fontWeight: '500',
           padding: { xs: '12px 16px', sm: '12px 16px', md: '18px 30px' },
